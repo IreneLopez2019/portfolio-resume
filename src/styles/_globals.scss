@@ -22,7 +22,7 @@ html {
     scroll-behavior: smooth;
 
     @media #{$min-width-lg} {
-        @include custom-scrollbar(transparent, var(--theme-primaryColorLighter), 10px);
+        @include custom-scrollbar(transparent, var(--theme-primaryColor), 8px);
     }
 }
 
