@@ -1,10 +1,58 @@
-import { graphql } from "gatsby";
 import React from "react";
+import { graphql } from "gatsby";
+import SEO from "../components/SEO";
+import Header from "../components/Header";
+import ContactData from "../components/ContactData";
+import InfoBlock from "../components/InfoBlock";
+import "../styles/main.scss";
+import styles from "./styles/IndexPage.module.scss";
 
 const IndexPage = ({ data }) => {
     const { data: pageData } = data.allPrismicCurriculum.edges[0].node;
 
-    return <></>;
+    return (
+        <>
+            <SEO />
+
+            <main>
+                <Header
+                    data={{
+                        picture: pageData.header_picture,
+                        name: pageData.header_name.text,
+                        deco: pageData.header_name_deco,
+                    }}
+                />
+
+                <ContactData data={pageData.contact_data} />
+
+                <div className={styles.infoBlocks}>
+                    <InfoBlock
+                        title={pageData.work_experience_title.text}
+                        data={pageData.work_experience_data}
+                        keys={["years", "data"]}
+                    />
+
+                    <InfoBlock
+                        title={pageData.skills_title.text}
+                        data={pageData.skills_data.html}
+                        isHtml={true}
+                    />
+
+                    <InfoBlock
+                        title={pageData.work_experience_title.text}
+                        data={pageData.work_experience_data}
+                        keys={["name", "data"]}
+                    />
+
+                    <InfoBlock
+                        title={pageData.work_experience_title.text}
+                        data={pageData.work_experience_data}
+                        keys={["year", "data"]}
+                    />
+                </div>
+            </main>
+        </>
+    );
 };
 
 export const query = graphql`
