@@ -1,0 +1,142 @@
+@import "./variables/media-queries";
+@import "./variables/z-indexes";
+@import "./shared/placeholders";
+@import "./shared/mixins";
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+	font-family: var(--theme-primaryFont);
+}
+
+html {
+	scroll-behavior: smooth;
+
+	@media #{$min-width-lg} {
+		@include custom-scrollbar(transparent, var(--theme-primaryColorLighter), 10px);
+	}
+}
+
+body {
+	&:not(.loaded) {
+		overflow: hidden;
+
+		&::after {
+			content: "";
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: #fff;
+			z-index: $loading - 1;
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--theme-secondaryFont);
+}
+
+.page-content {
+	$content-padding: 50px;
+	$content-padding-mobile: $content-padding / 2;
+
+	max-width: 50vw;
+	padding: $content-padding $content-padding 100px;
+	padding-top: calc(var(--headerHeight) + #{$content-padding});
+	margin: 0 auto;
+
+	@media #{$max-width-xxl} {
+		max-width: 65vw;
+	}
+
+	@media #{$max-width-lg} {
+		max-width: 85vw;
+	}
+
+	@media #{$max-width-md} {
+		max-width: 100%;
+		padding-top: calc(var(--headerHeight) + #{$content-padding-mobile});
+	}
+}
+
+.section-title {
+	@extend %section-title;
+}
+
+.block-title {
+	@extend %block-title;
+}
+
+.base-cta {
+	$border-size: 2px;
+
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	border: $border-size solid var(--theme-primaryColor);
+	color: var(--theme-primaryColor);
+	background-color: transparent;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	user-select: none;
+	transition: color ease 250ms;
+	cursor: pointer;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: -$border-size;
+		right: -$border-size;
+		bottom: -$border-size;
+		left: -$border-size;
+		background-color: var(--theme-primaryColor);
+		pointer-events: none;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform ease 250ms;
+		z-index: -1;
+	}
+
+	&:focus,
+	&:hover {
+		color: #fff;
+
+		&::after {
+			transform: scaleY(1);
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}

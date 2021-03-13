@@ -1,0 +1,12 @@
+%section-title {
+	font-size: 30px;
+	margin-bottom: 20px;
+	color: var(--theme-primaryColor);
+}
+
+%block-title {
+	font-size: 22px;
+	padding-top: calc(var(--headerHeight) + 15px);
+	margin-bottom: 30px;
+	color: var(--theme-primaryColor);
+}
