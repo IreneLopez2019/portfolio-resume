@@ -33,6 +33,13 @@ const IndexPage = ({ data }) => {
                             customClass={styles.experienceBlock}
                             keys={["years", "data"]}
                         />
+                        
+                        <InfoBlock
+                            title={pageData.complementary_experience_title.text}
+                            data={pageData.complementary_experience_data}
+                            customClass={styles.complementaryExperienceBlock}
+                            keys={["years", "data"]}
+                        />
 
                         <InfoBlock
                             title={pageData.skills_title.text}
@@ -91,6 +98,17 @@ export const query = graphql`
                             text
                         }
                         work_experience_data {
+                            years {
+                                text
+                            }
+                            data {
+                                html
+                            }
+                        }
+                        complementary_experience_title {
+                            text
+                        }
+                        complementary_experience_data{
                             years {
                                 text
                             }
