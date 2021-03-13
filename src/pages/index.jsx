@@ -26,27 +26,33 @@ const IndexPage = ({ data }) => {
                 <ContactData data={pageData.contact_data} />
 
                 <div className={styles.infoBlocks}>
-                    <InfoBlock
-                        title={pageData.work_experience_title.text}
-                        data={pageData.work_experience_data}
-                        keys={["years", "data"]}
-                    />
+                    <div className={styles.controlGroup}>
+                        <InfoBlock
+                            title={pageData.work_experience_title.text}
+                            data={pageData.work_experience_data}
+                            customClass={styles.experienceBlock}
+                            keys={["years", "data"]}
+                        />
+
+                        <InfoBlock
+                            title={pageData.skills_title.text}
+                            data={pageData.skills_data.html}
+                            customClass={styles.skillsBlock}
+                            isHtml={true}
+                        />
+
+                        <InfoBlock
+                            title={pageData.tools_title.text}
+                            data={pageData.tools_data}
+                            customClass={styles.toolsBlock}
+                            keys={["name", "data"]}
+                        />
+                    </div>
 
                     <InfoBlock
-                        title={pageData.skills_title.text}
-                        data={pageData.skills_data.html}
-                        isHtml={true}
-                    />
-
-                    <InfoBlock
-                        title={pageData.work_experience_title.text}
-                        data={pageData.work_experience_data}
-                        keys={["name", "data"]}
-                    />
-
-                    <InfoBlock
-                        title={pageData.work_experience_title.text}
-                        data={pageData.work_experience_data}
+                        title={pageData.education_title.text}
+                        data={pageData.education_data}
+                        customClass={styles.educationBlock}
                         keys={["year", "data"]}
                     />
                 </div>
