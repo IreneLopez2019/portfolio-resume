@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
 
     return (
         <>
-            <SEO />
+            <SEO title="Inicio" />
 
             <main>
                 <Header
