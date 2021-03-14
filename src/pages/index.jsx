@@ -49,20 +49,21 @@ const IndexPage = ({ data }) => {
                         />
                     </div>
 
-                    <InfoBlock
-                        title={pageData.education_title.text}
-                        data={pageData.education_data}
-                        customClass={styles.educationBlock}
-                        keys={["year", "data"]}
-                    />
+                    <div className={styles.controlGroup}>
+                        <InfoBlock
+                            title={pageData.education_title.text}
+                            data={pageData.education_data}
+                            customClass={styles.educationBlock}
+                            keys={["year", "data"]}
+                        />
 
-                    <InfoBlock
+                        <InfoBlock
                             title={pageData.complementary_education_title.text}
                             data={pageData.complementary_education_data}
                             customClass={styles.complementaryEducationBlock}
                             keys={["years", "data"]}
-                    />
-
+                        />
+                    </div>
                 </div>
             </main>
         </>
@@ -137,7 +138,7 @@ export const query = graphql`
                         complementary_education_title {
                             text
                         }
-                        complementary_education_data{
+                        complementary_education_data {
                             years {
                                 text
                             }
