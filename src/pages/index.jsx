@@ -33,13 +33,6 @@ const IndexPage = ({ data }) => {
                             customClass={styles.experienceBlock}
                             keys={["years", "data"]}
                         />
-                        
-                        <InfoBlock
-                            title={pageData.complementary_experience_title.text}
-                            data={pageData.complementary_experience_data}
-                            customClass={styles.complementaryExperienceBlock}
-                            keys={["years", "data"]}
-                        />
 
                         <InfoBlock
                             title={pageData.skills_title.text}
@@ -62,6 +55,14 @@ const IndexPage = ({ data }) => {
                         customClass={styles.educationBlock}
                         keys={["year", "data"]}
                     />
+
+                    <InfoBlock
+                            title={pageData.complementary_education_title.text}
+                            data={pageData.complementary_education_data}
+                            customClass={styles.complementaryEducationBlock}
+                            keys={["years", "data"]}
+                    />
+
                 </div>
             </main>
         </>
@@ -105,17 +106,6 @@ export const query = graphql`
                                 html
                             }
                         }
-                        complementary_experience_title {
-                            text
-                        }
-                        complementary_experience_data{
-                            years {
-                                text
-                            }
-                            data {
-                                html
-                            }
-                        }
                         skills_title {
                             text
                         }
@@ -138,6 +128,17 @@ export const query = graphql`
                         }
                         education_data {
                             year {
+                                text
+                            }
+                            data {
+                                html
+                            }
+                        }
+                        complementary_education_title {
+                            text
+                        }
+                        complementary_education_data{
+                            years {
                                 text
                             }
                             data {

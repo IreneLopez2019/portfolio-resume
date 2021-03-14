@@ -86,40 +86,6 @@
             }
         }
     },
-    "Experiencia complementaria": {
-        "complementary_experience_title": {
-            "type": "StructuredText",
-            "config": {
-                "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-                "label": "Título de la sección",
-                "placeholder": "Ingresá el título de la sección"
-            }
-        },
-        "complementary_experience_data": {
-            "type": "Group",
-            "config": {
-                "fields": {
-                    "years": {
-                        "type": "StructuredText",
-                        "config": {
-                            "single": "heading3",
-                            "label": "Años",
-                            "placeholder": "Ingresá los años de experiencia"
-                        }
-                    },
-                    "data": {
-                        "type": "StructuredText",
-                        "config": {
-                            "multi": "paragraph, strong, em",
-                            "label": "Datos",
-                            "placeholder": "Ingresá los datos del empleo (lugar y tareas)"
-                        }
-                    }
-                },
-                "label": "Experiencia"
-            }
-        }
-    },
     "Skills": {
         "skills_title": {
             "type": "StructuredText",
@@ -199,6 +165,40 @@
                             "multi": "paragraph, strong, em",
                             "label": "Datos",
                             "placeholder": "Ingresá los datos (lugar y estudios)"
+                        }
+                    }
+                },
+                "label": "Experiencia"
+            }
+        }
+    },
+    "Educación complementaria": {
+        "complementary_education": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                "label": "Título de la sección",
+                "placeholder": "Ingresá el título de la sección"
+            }
+        },
+        "complementary_education_data": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "years": {
+                        "type": "StructuredText",
+                        "config": {
+                            "single": "heading3",
+                            "label": "Años",
+                            "placeholder": "Ingresá los años de experiencia"
+                        }
+                    },
+                    "data": {
+                        "type": "StructuredText",
+                        "config": {
+                            "multi": "paragraph, strong, em",
+                            "label": "Datos",
+                            "placeholder": "Ingresá los datos del empleo (lugar y tareas)"
                         }
                     }
                 },

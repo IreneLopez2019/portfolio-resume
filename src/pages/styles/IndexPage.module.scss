@@ -38,10 +38,10 @@
     }
 
     .experienceBlock,
-    .complementaryExperienceBlock,
     .skillsBlock,
     .toolsBlock,
-    .educationBlock {
+    .educationBlock,
+    .complementaryEducationBlock {
         > h2 {
             color: var(--theme-primaryColor);
             text-transform: uppercase;
