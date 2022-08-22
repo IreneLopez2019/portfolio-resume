@@ -17,7 +17,32 @@
         padding: 25px;
     }
 
-    @media #{$max-width-md} {
+    .languageToggler {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        button {
+            background-color: transparent;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--theme-secondaryColor);
+            font-size: 12px;
+            transition: color ease 250ms, opacity ease 250ms;
+            cursor: pointer;
+
+            &.active {
+                color: var(--theme-highlightColor);
+            }
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
     }
 
     > img {

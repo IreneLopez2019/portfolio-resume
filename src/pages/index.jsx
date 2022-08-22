@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { graphql } from "gatsby";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
 import ContactData from "../components/ContactData";
 import InfoBlock from "../components/InfoBlock";
+import styles from "./IndexPage.module.scss";
 import "../styles/main.scss";
-import styles from "./styles/IndexPage.module.scss";
 
 const IndexPage = ({ data }) => {
-    const { data: pageData } = data.allPrismicCurriculum.edges[0].node;
+    const prismicData = useMemo(() => data.allPrismicCurriculum.edges, [data]);
+    const availableLanguages = prismicData.map(x => x.node.alternate_languages[0].lang);
+    const [currentLanguage, setCurrentLanguage] = useState(availableLanguages[0]);
+    const { data: pageData } = useMemo(() => prismicData.find(x => x.node.alternate_languages[0].lang === currentLanguage)?.node, [prismicData, currentLanguage]);
 
     return (
         <>
@@ -16,6 +19,9 @@ const IndexPage = ({ data }) => {
 
             <main>
                 <Header
+                    languages={availableLanguages}
+                    currentLanguage={currentLanguage}
+                    setCurrentLanguage={setCurrentLanguage}
                     data={{
                         picture: pageData.header_picture,
                         name: pageData.header_name.text,
@@ -75,6 +81,9 @@ export const query = graphql`
         allPrismicCurriculum {
             edges {
                 node {
+                    alternate_languages {
+                        lang
+                    }
                     data {
                         header_picture {
                             url
