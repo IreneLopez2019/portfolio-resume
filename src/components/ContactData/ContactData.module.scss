@@ -1,66 +1,66 @@
-@import "../../styles/variables/media-queries";
+@use '../../styles/variables/media-queries' as *;
 
 .contactData {
-    min-height: 20vh;
-    background-color: var(--theme-tertiaryColor);
-    padding: 50px 25px;
-    align-items: center;
+	min-height: 20vh;
+	background-color: var(--theme-tertiaryColor);
+	padding: 50px 25px;
+	align-items: center;
 
-    &,
-    > div {
-        display: flex;
-    }
+	&,
+	> div {
+		display: flex;
+	}
 
-    > div {
-        margin: 0 auto;
-        justify-content: center;
+	> div {
+		margin: 0 auto;
+		justify-content: center;
 
-        @media #{$max-width-lg} {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 50px;
-        }
+		@media #{$max-width-lg} {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 50px;
+		}
 
-        @media #{$max-width-md} {
-            grid-template-columns: 1fr;
-        }
+		@media #{$max-width-md} {
+			grid-template-columns: 1fr;
+		}
 
-        .dataBlock {
-            width: 250px;
-            text-align: center;
-            padding: 0 25px;
+		.dataBlock {
+			width: 250px;
+			text-align: center;
+			padding: 0 25px;
 
-            @media #{$max-width-lg} {
-                padding: 0;
-                margin: 0 auto;
-            }
+			@media #{$max-width-lg} {
+				padding: 0;
+				margin: 0 auto;
+			}
 
-            img {
-                height: 75px;
-                object-fit: contain;
+			img {
+				height: 75px;
+				object-fit: contain;
 
-                @media #{$max-width-lg} {
-                    height: 50px;
-                }
-            }
+				@media #{$max-width-lg} {
+					height: 50px;
+				}
+			}
 
-            p {
-                margin-top: 25px;
-                line-height: 1.5;
+			p {
+				margin-top: 25px;
+				line-height: 1.5;
 
-                @media #{$max-width-md} {
-                    margin-top: 15px;
-                }
-            }
+				@media #{$max-width-md} {
+					margin-top: 15px;
+				}
+			}
 
-            a {
-                color: var(--theme-primaryColor);
-                transition: color ease 250ms;
+			a {
+				color: var(--theme-primaryColor);
+				transition: color ease 250ms;
 
-                &:hover {
-                    color: #000;
-                }
-            }
-        }
-    }
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+	}
 }

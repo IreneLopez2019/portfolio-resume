@@ -1,0 +1,229 @@
+{
+	"Theme": {
+		"theme_primary": {
+			"type": "Color",
+			"config": {
+				"label": "Primary"
+			}
+		},
+		"theme_secondary": {
+			"type": "Color",
+			"config": {
+				"label": "Secondary"
+			}
+		},
+		"theme_accent": {
+			"type": "Color",
+			"config": {
+				"label": "Accent"
+			}
+		}
+	},
+	"Header": {
+		"header_name": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1",
+				"label": "Nombre",
+				"placeholder": "Ingresá tu nombre"
+			}
+		},
+		"header_name_deco": {
+			"type": "Image",
+			"config": {
+				"constraint": {},
+				"thumbnails": [],
+				"label": "Decorado del nombre"
+			}
+		},
+		"header_picture": {
+			"type": "Image",
+			"config": {
+				"constraint": {},
+				"thumbnails": [],
+				"label": "Foto principal"
+			}
+		}
+	},
+	"Datos de contacto": {
+		"contact_data": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"icon": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Ícono"
+						}
+					},
+					"text": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph,strong,em,hyperlink",
+							"allowTargetBlank": true,
+							"label": "Texto",
+							"placeholder": "Ingresá la información de contacto"
+						}
+					}
+				},
+				"label": "Datos de contacto"
+			}
+		}
+	},
+	"Experiencia formal": {
+		"work_experience_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1,heading2,heading3,heading4,heading5,heading6",
+				"label": "Título de la sección",
+				"placeholder": "Ingresá el título de la sección"
+			}
+		},
+		"work_experience_data": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"years": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading3",
+							"label": "Años",
+							"placeholder": "Ingresá los años de experiencia"
+						}
+					},
+					"data": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph,strong,em",
+							"label": "Datos",
+							"placeholder": "Ingresá los datos del empleo (lugar y tareas)"
+						}
+					}
+				},
+				"label": "Experiencia"
+			}
+		}
+	},
+	"Skills": {
+		"skills_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1,heading2,heading3,heading4,heading5,heading6",
+				"label": "Título de la sección",
+				"placeholder": "Ingresá el título de la sección"
+			}
+		},
+		"skills_data": {
+			"type": "StructuredText",
+			"config": {
+				"multi": "paragraph,strong,em",
+				"label": "Habilidades",
+				"placeholder": "Ingresá tus habilidades"
+			}
+		}
+	},
+	"Herramientas": {
+		"tools_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1,heading2,heading3,heading4,heading5,heading6",
+				"label": "Título de la sección",
+				"placeholder": "Ingresá el título de la sección"
+			}
+		},
+		"tools_data": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"name": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading3",
+							"label": "Nombre de la herramienta",
+							"placeholder": "Ingresá el nombre de la herramienta"
+						}
+					},
+					"data": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph",
+							"label": "Datos de la herramienta",
+							"placeholder": "Ingresá el detalle de la herramienta"
+						}
+					}
+				},
+				"label": "Herramientas"
+			}
+		}
+	},
+	"Educación": {
+		"education_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1,heading2,heading3,heading4,heading5,heading6",
+				"label": "Título de la sección",
+				"placeholder": "Ingresá el título de la sección"
+			}
+		},
+		"education_data": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"year": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading3",
+							"label": "Años",
+							"placeholder": "Ingresá el año"
+						}
+					},
+					"data": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph,strong,em",
+							"label": "Datos",
+							"placeholder": "Ingresá los datos (lugar y estudios)"
+						}
+					}
+				},
+				"label": "Experiencia"
+			}
+		}
+	},
+	"Educación complementaria": {
+		"complementary_education_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1,heading2,heading3,heading4,heading5,heading6",
+				"label": "Título de la sección",
+				"placeholder": "Ingresá el título de la sección"
+			}
+		},
+		"complementary_education_data": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"years": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading3",
+							"label": "Años",
+							"placeholder": "Ingresá los años de experiencia"
+						}
+					},
+					"data": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph,strong,em",
+							"label": "Datos",
+							"placeholder": "Ingresá los datos del empleo (lugar y tareas)"
+						}
+					}
+				},
+				"label": "Experiencia"
+			}
+		}
+	}
+}
