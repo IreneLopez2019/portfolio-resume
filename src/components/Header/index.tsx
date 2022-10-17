@@ -15,7 +15,10 @@ export function Header(props: HeaderProps): JSX.Element {
 		<header className={styles.header}>
 			<div className={styles.languageToggler}>
 				{props.languages.map(language => (
-					<button key={language} className={language === props.currentLanguage ? styles.active : undefined} onClick={() => props.setCurrentLanguage(language)}>
+					<button
+						key={language}
+						className={language === props.currentLanguage ? styles.active : undefined}
+						onClick={() => props.setCurrentLanguage(language)}>
 						{language}
 					</button>
 				))}

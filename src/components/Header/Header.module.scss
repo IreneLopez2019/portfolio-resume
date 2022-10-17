@@ -5,6 +5,7 @@
 	background-color: var(--theme-primaryColor);
 	min-height: 35vh;
 	padding: 50px;
+	user-select: none;
 
 	display: flex;
 	flex-direction: column;
@@ -33,14 +34,14 @@
 			color: var(--theme-secondaryColor);
 			font-size: 12px;
 			transition: color ease 250ms, opacity ease 250ms;
-			cursor: pointer;
 
 			&.active {
-				color: var(--theme-highlightColor);
+				color: var(--theme-accentColor);
 			}
 
-			&:hover {
+			&:hover:not(.active) {
 				opacity: 0.5;
+				cursor: pointer;
 			}
 		}
 	}

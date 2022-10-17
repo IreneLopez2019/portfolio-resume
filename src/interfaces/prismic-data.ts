@@ -50,4 +50,11 @@ export interface ComplementaryEducation {
 	}[];
 }
 
-export interface PrismicData extends Header, Contact, WorkExperience, Skills, Tools, Education, ComplementaryEducation {}
+export interface Theme {
+	theme_accent: string;
+	theme_primary: string;
+	theme_secondary: string;
+	theme_tertiary: string;
+}
+
+export interface PrismicData extends Header, Contact, WorkExperience, Skills, Tools, Education, ComplementaryEducation, Theme {}

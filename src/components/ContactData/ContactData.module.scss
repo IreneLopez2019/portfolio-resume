@@ -1,42 +1,45 @@
 @use '../../styles/variables/media-queries' as *;
+@use '../../styles/shared/mixins' as *;
 
 .contactData {
 	min-height: 20vh;
 	background-color: var(--theme-tertiaryColor);
-	padding: 50px 25px;
+	padding: 40px 25px;
+
+	display: flex;
 	align-items: center;
+	justify-content: center;
 
-	&,
 	> div {
+		@include custom-scrollbar;
+
 		display: flex;
-	}
-
-	> div {
-		margin: 0 auto;
 		justify-content: center;
+		gap: 40px;
+		padding-bottom: 15px;
+		overflow-x: auto;
 
 		@media #{$max-width-lg} {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-gap: 50px;
+			flex-wrap: wrap;
 		}
 
-		@media #{$max-width-md} {
-			grid-template-columns: 1fr;
+		@media #{$max-width-sm} {
+			flex-direction: column;
 		}
 
 		.dataBlock {
-			width: 250px;
+			width: 100%;
+			max-width: 225px;
 			text-align: center;
 			padding: 0 25px;
+			white-space: pre;
 
 			@media #{$max-width-lg} {
 				padding: 0;
-				margin: 0 auto;
 			}
 
 			img {
-				height: 75px;
+				height: 60px;
 				object-fit: contain;
 
 				@media #{$max-width-lg} {
@@ -45,12 +48,8 @@
 			}
 
 			p {
-				margin-top: 25px;
+				margin-top: 15px;
 				line-height: 1.5;
-
-				@media #{$max-width-md} {
-					margin-top: 15px;
-				}
 			}
 
 			a {

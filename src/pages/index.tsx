@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Head from 'next/head';
 import { predicate } from '@prismicio/client';
 import { PrismicDocument } from '@prismicio/types';
@@ -18,6 +18,17 @@ export default function Home(props: HomePageProps): JSX.Element {
 		() => props.content.find(x => x.lang === currentLanguage)?.data as PrismicData,
 		[props.content, currentLanguage]
 	);
+
+	function setThemeCustomProperty(hierarchy: string, color: string): void {
+		document.documentElement.style.setProperty(`--theme-${hierarchy}Color`, color);
+	}
+
+	useEffect(() => {
+		setThemeCustomProperty('primary', pageData.theme_primary);
+		setThemeCustomProperty('secondary', pageData.theme_secondary);
+		setThemeCustomProperty('tertiary', pageData.theme_tertiary);
+		setThemeCustomProperty('accent', pageData.theme_accent);
+	}, [pageData]);
 
 	return (
 		<main>
